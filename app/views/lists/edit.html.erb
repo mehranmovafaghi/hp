@@ -1,0 +1,40 @@
+<div class="container" style="margin-top:100px; border: 2px solid #000;height: 400px; overflow-y: scroll;">
+
+      <div class="starter-template">
+  <h1>My Music Collection | <small><%= link_to "Add new Track", new_list_path %></small></h1>
+<p></p>
+<hr />
+
+<%= form_for @list do |item| %>
+<% if @list.errors.any? %>
+<h2>Errors:</h2>
+<ul>
+<% @list.errors.full_messages.each do |message| %>
+<li><%= message %><?li>
+<% end %>
+<ul>
+<% end %>
+
+<p>
+<%= item.label :name %>
+<%= item.text_field :name %>
+<br />
+<%= item.label :format %>
+<%= item.text_field :format %>
+<br />
+<%= item.label :length %>
+<%= item.text_field :length %>
+<br />
+<%= item.label :size %>
+<%= item.text_field :size %>
+<br />
+<%= item.label :description %>
+<%= item.text_area :description %>
+</p>
+<%= item.submit "Edit" %>
+
+<% end %>
+
+</div>
+</div><!-- /.container -->
+
